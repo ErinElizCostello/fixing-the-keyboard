@@ -12,10 +12,21 @@
 
 
 findBrokenKeys = (str1, str2) => {
-  // write your code HERE
+  let arr = [];
+  for (let i = 0; i < str1.length; i++) {
+    let letter1 = str1[i];
+    let letter2 = str2[i];
 
-
-
+    if (letter1 !== letter2) {
+      if (!arr.includes(letter1)) {
+        arr.push(letter1)
+      }
+    }
+  } 
+  if (arr.length === 0) {
+    return -1
+  }
+  return arr;
 };
 
 module.exports = findBrokenKeys;
